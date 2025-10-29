@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RendalMobil Erutd - Rental Mobil Mewah Profesional </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #334155;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--primary);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/954c3228-ff2f-4188-82f9-3c86f36b33c6.png') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .car-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white bg-opacity-90 shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-amber-500">
+                        <span class="text-slate-800">Rendal</span>Mobil<span class="text-amber-500">Erutd</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-slate-800 hover:text-amber-500">Home</a>
+                    <a href="#units" class="nav-link text-slate-800 hover:text-amber-500">Unit Mobil</a>
+                    <a href="#services" class="nav-link text-slate-800 hover:text-amber-500">Layanan</a>
+                    <a href="#documents" class="nav-link text-slate-800 hover:text-amber-500">Surat Kelengkapan</a>
+                    <a href="#facilities" class="nav-link text-slate-800 hover:text-amber-500">Servis</a>
+                    <a href="#gallery" class="nav-link text-slate-800 hover:text-amber-500">Galeri</a>
+                    <a href="#location" class="nav-link text-slate-800 hover:text-amber-500">Lokasi</a>
+                    <a href="#contact" class="nav-link text-slate-800 hover:text-amber-500">Kontak</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pt-3">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Home</a>
+                    <a href="#units" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Unit Mobil</a>
+                    <a href="#services" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Layanan</a>
+                    <a href="#documents" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Surat Kelengkapan</a>
+                    <a href="#facilities" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Servis</a>
+                    <a href="#gallery" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Galeri</a>
+                    <a href="#location" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Lokasi</a>
+                    <a href="#contact" class="block px-3 py-2 text-slate-700 hover:bg-gray-100 rounded">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero relative">
+        <div class="container mx-auto px-6 animate-on-scroll">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Rental Mobil Mewah Premium Erutd</h1>
+                <p class="text-xl mb-8">Temukan pengalaman berkendara tak terlupakan dengan armada mobil mewah pilihan kami.</p>
+                <div class="flex space-x-4">
+                    <a href="#units" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition duration-300">
+                        Lihat Unit
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-slate-800 transition duration-300">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="#units" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- Car Units Section -->
+    <section id="units" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Armada Mobil Mewah Kami</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Pilih dari berbagai pilihan mobil mewah terbaik dengan kenyamanan dan performa tinggi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Car 1 -->
+                <div class="car-card bg-white rounded-xl overflow-hidden animate-on-scroll">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d2bcbad0-a913-4ae4-8421-24605c5ae677.png" alt="Mercedes-Benz S-Class 2023 hitam metallic dengan interior kulit coklat premium" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Mercedes-Benz S-Class</h3>
+                        <div class="flex items-center text-amber-500 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-slate-600 ml-2">5.0</span>
+                        </div>
+                        <ul class="text-slate-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-car mr-2 text-amber-500"></i> Sedan</li>
+                            <li class="flex items-center"><i class="fas fa-gas-pump mr-2 text-amber-500"></i> Pertamax</li>
+                            <li class="flex items-center"><i class="fas fa-users mr-2 text-amber-500"></i> 5 Penumpang</li>
+                            <li class="flex items-center"><i class="fas fa-tachometer-alt mr-2 text-amber-500"></i> 6.5L/100km</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-slate-400 text-sm line-through">Rp 2.500.000/hari</span>
+                                <span class="text-xl font-bold text-slate-800">Rp 1.800.000/hari</span>
+                            </div>
+                            <button class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card bg-white rounded-xl overflow-hidden animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2fb61dfb-0fab-4003-baa5-38121d9f0a72.png" alt="BMW 7 Series 2023 warna silver dengan interior hitam dan fitur teknologi canggih" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">BMW 7 Series</h3>
+                        <div class="flex items-center text-amber-500 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-slate-600 ml-2">4.8</span>
+                        </div>
+                        <ul class="text-slate-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-car mr-2 text-amber-500"></i> Sedan</li>
+                            <li class="flex items-center"><i class="fas fa-gas-pump mr-2 text-amber-500"></i> Pertamax</li>
+                            <li class="flex items-center"><i class="fas fa-users mr-2 text-amber-500"></i> 5 Penumpang</li>
+                            <li class="flex items-center"><i class="fas fa-tachometer-alt mr-2 text-amber-500"></i> 7.2L/100km</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-slate-400 text-sm line-through">Rp 2.300.000/hari</span>
+                                <span class="text-xl font-bold text-slate-800">Rp 1.750.000/hari</span>
+                            </div>
+                            <button class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card bg-white rounded-xl overflow-hidden animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4fc8e2ca-e546-4a22-bd73-a7d78fef09ff.png" alt="Range Rover Sport 2023 warna putih dengan interior kayu dan fitur off-road premium" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Range Rover Sport</h3>
+                        <div class="flex items-center text-amber-500 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-slate-600 ml-2">5.0</span>
+                        </div>
+                        <ul class="text-slate-600 mb-4 space-y-2">
+                            <li class="flex items-center"><i class="fas fa-car mr-2 text-amber-500"></i> SUV</li>
+                            <li class="flex items-center"><i class="fas fa-gas-pump mr-2 text-amber-500"></i> Pertamax</li>
+                            <li class="flex items-center"><i class="fas fa-users mr-2 text-amber-500"></i> 5 Penumpang</li>
+                            <li class="flex items-center"><i class="fas fa-tachometer-alt mr-2 text-amber-500"></i> 8.1L/100km</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-slate-400 text-sm line-through">Rp 3.200.000/hari</span>
+                                <span class="text-xl font-bold text-slate-800">Rp 2.850.000/hari</span>
+                            </div>
+                            <button class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                                <i class="fas fa-shopping-cart mr-2"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Layanan Kami</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Kami menyediakan berbagai layanan premium untuk memastikan pengalaman rental mobil yang istimewa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-on-scroll">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Sopir Profesional</h3>
+                    <p class="text-slate-600">Sopir berpengalaman dan terlatih kami siap mengantar Anda dengan aman dan nyaman ke tujuan.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Antar Jemput Bandara</h3>
+                    <p class="text-slate-600">Layanan antar jemput bandara dengan ketepatan waktu dan fasilitas lengkap untuk kenyamanan Anda.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Layanan 24 Jam</h3>
+                    <p class="text-slate-600">Kami siap melayani kebutuhan rental mobil Anda kapan saja, 24 jam sehari, 7 hari seminggu.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Asuransi Lengkap</h3>
+                    <p class="text-slate-600">Semua rental kami dilengkapi dengan asuransi komprehensif untuk memberikan ketenangan pikiran Anda.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Dukungan Darurat</h3>
+                    <p class="text-slate-600">Tim dukungan darurat kami siap membantu kapan saja jika Anda membutuhkan bantuan di jalan.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Paket Wisata</h3>
+                    <p class="text-slate-600">Nikmati paket wisata lengkap dengan itinerary dan rekomendasi tempat terbaik dari kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Surat Kelengkapan Mobil</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Setiap mobil kami dilengkapi dengan dokumen-dokumen resmi dan terpercaya.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center animate-on-scroll">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f1d5ad82-2f3e-4487-b184-10ca9dd78c9a.png" alt="Beberapa dokumen rental mobil yang tersusun rapi termasuk STNK, asuransi, dan surat-surat resmi lainnya" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Dokumen Lengkap dan Valid</h3>
+                    <p class="text-slate-600 mb-6">Kami memastikan semua dokumen mobil dalam keadaan lengkap dan valid untuk memberikan kepercayaan kepada pelanggan.</p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-amber-500"></i>
+                            </div>
+                            <p class="text-slate-700">STNK asli dan fotokopi yang valid</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-amber-500"></i>
+                            </div>
+                            <p class="text-slate-700">BPKB yang terdaftar</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-amber-500"></i>
+                            </div>
+                            <p class="text-slate-700">Polis asuransi komprehensif</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-amber-500"></i>
+                            </div>
+                            <p class="text-slate-700">Surat kerja sama dari perusahaan (untuk perusahaan)</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-check text-amber-500"></i>
+                            </div>
+                            <p class="text-slate-700">Laporan kondisi kendaraan sebelum dan sesudah pemakaian</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="section bg-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Servis dan Perawatan</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Kami memberikan perawatan terbaik untuk memastikan kendaraan selalu dalam kondisi prima.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="animate-on-scroll">
+                    <div class="bg-white p-8 rounded-xl shadow-sm h-full">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Perawatan Rutin</h3>
+                        <p class="text-slate-600 mb-6">Setiap kendaraan kami mendapatkan perawatan rutin oleh mekanik profesional untuk memastikan performa optimal.</p>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Service berkala setiap 5.000 km</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Pengecekan sistem pengereman dan suspensi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Penggantian oli dan filter rutin</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Rotasi dan balancing ban</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Pemeriksaan sistem kelistrikan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="bg-white p-8 rounded-xl shadow-sm h-full">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Fasilitas Pendukung</h3>
+                        <p class="text-slate-600 mb-6">Kami menyediakan berbagai fasilitas pendukung untuk kenyamanan dan keamanan perjalanan Anda.</p>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">GPS navigasi terpasang</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Wifi mobile dan charger USB</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Air mineral dan tissue</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Kotak P3K standar</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mr-3"></div>
+                                <span class="text-slate-700">Dokumentasi kondisi kendaraan sebelum dan sesudah pakai</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Galeri Kami</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Momen-momen istimewa bersama pelanggan kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-on-scroll">
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1b1ae175-6f09-42c4-87b3-d7e87022587a.png" alt="Foto Mercy S-Class warna hitam di garasi mewah dengan penerangan yang dramatis" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7e3b7a9c-6ebc-4d00-8dc3-ad235306bf28.png" alt="BMW 7 Series warna silver di depan hotel mewah dengan latar bangunan modern" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba7521e3-9887-4b5d-b294-9ebacc37bcd5.png" alt="Range Rover Sport warna putih di area pegunungan dengan pemandangan spektakuler" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b60f2404-74e7-4dd2-af65-0e4d0a500a07.png" alt="Interior mewah Mercedes-Benz dengan dashboard kayu dan layar sentuh lebar" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0c566e78-f443-4cd6-b5a2-43002a71c1b5.png" alt="Tim mekanik profesional sedang melakukan servis berkala pada mobil mewah" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2cec8122-6ace-4402-a80f-5a4d687a8f0a.png" alt="Pelanggan bahagia berfoto bersama mobil rental saat acara pernikahan" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section bg-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Lokasi Kami</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Kunjungi kantor kami atau hubungi untuk informasi lebih lanjut.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-stretch gap-8 animate-on-scroll">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-sm h-full">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Informasi Kontak</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-amber-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Alamat Kantor</h4>
+                                    <p class="text-slate-600">Jl. Sudirman padang</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="text-amber-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Telepon</h4>
+                                    <p class="text-slate-600">082169298599</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="text-amber-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Email</h4>
+                                    <p class="text-slate-600">@rendalmobilerutd.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="text-amber-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Jam Operasional</h4>
+                                    <p class="text-slate-600">Senin - Minggu: 24 Jam</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <div class="h-full rounded-xl overflow-hidden shadow-sm">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6639057738224!2d106.8229696147686!3d-6.175622595536709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJakarta!5e0!3m2!1sen!2sid!4v1623701603434!5m2!1sen!2sid" width="100%" height="100%" style="min-height: 400px;" allowfullscreen="" loading="lazy" class="border-0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-800 mb-3">Hubungi Kami</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mb-3"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto">Punya pertanyaan? Hubungi tim kami yang selalu siap membantu.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto animate-on-scroll">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-slate-700 font-medium mb-2">Nama Lengkap</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition duration-300" placeholder="Masukkan nama">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-slate-700 font-medium mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition duration-300" placeholder="Masukkan email">
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-slate-700 font-medium mb-2">Nomor Telepon</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition duration-300" placeholder="Masukkan nomor telepon">
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-slate-700 font-medium mb-2">Subjek</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition duration-300" placeholder="Masukkan subjek">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-slate-700 font-medium mb-2">Pesan</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition duration-300" placeholder="Tulis pesan Anda"></textarea>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition duration-300 w-full md:w-auto">
+                            Kirim Pesan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">RendalMobil Erutd</h3>
+                    <p class="text-slate-300">Solusi rental mobil mewah premium dengan layanan terbaik dan profesional.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-slate-300 hover:text-amber-500 transition duration-300">Home</a></li>
+                        <li><a href="#units" class="text-slate-300 hover:text-amber-500 transition duration-300">Unit Mobil</a></li>
+                        <li><a href="#services" class="text-slate-300 hover:text-amber-500 transition duration-300">Layanan</a></li>
+                        <li><a href="#documents" class="text-slate-300 hover:text-amber-500 transition duration-300">Surat Kelengkapan</a></li>
+                        <li><a href="#facilities" class="text-slate-300 hover:text-amber-500 transition duration-300">Servis</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informasi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#gallery" class="text-slate-300 hover:text-amber-500 transition duration-300">Galeri</a></li>
+                        <li><a href="#location" class="text-slate-300 hover:text-amber-500 transition duration-300">Lokasi</a></li>
+                        <li><a href="#contact" class="text-slate-300 hover:text-amber-500 transition duration-300">Kontak</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-amber-500 transition duration-300">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-slate-300 mb-4">Dapatkan penawaran dan promo terbaru langsung ke email Anda.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-slate-800 w-full">
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700 mt-12 pt-6 text-center text-slate-400">
+                <p>© 2023 RendalMobil Erutd. Seluruh hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Animate on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const animateOnScroll = function() {
+            const windowHeight = window.innerHeight;
+            const windowTopPosition = window.scrollY;
+            const windowBottomPosition = (windowTopPosition + windowHeight) - 100;
+
+            animateElements.forEach(element => {
+                const elementHeight = element.offsetHeight;
+                const elementTopPosition = element.offsetTop;
+                const elementBottomPosition = (elementTopPosition + elementHeight);
+
+                if ((elementBottomPosition >= windowTopPosition + 100) &&
+                    (elementTopPosition <= windowBottomPosition)) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
+
